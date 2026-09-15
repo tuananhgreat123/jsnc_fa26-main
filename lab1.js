@@ -1,0 +1,1 @@
+console.log("Day la lab1.js");
