@@ -31,3 +31,24 @@ sayHello("Tuấn Anh");
 sayHello("Bình");
 sayHello("Hải");
 sayHello("Hà");
+// bai 5 : hàm tính tổng 
+function sum(a, b){
+    return a + b;
+}
+const result = sum(5,10);
+console.log("Tổng của 5 và 10 là: " + result);
+// function sum(a, b){
+//     console.log("Tổng của " + a + " và " + b + " là: " + (a + b));
+// }
+// sum(5,10);
+// bai 6 : Hàm tính tiền
+function calculatePrice(price, quantity){
+    return price * quantity;
+}
+const total = calculatePrice(100, 5);
+console.log("Tổng tiền là: " + total);
+// function calculatePrice(price, quanity){
+//     console.log(price * quanity);
+// }
+// calculatePrice(100, 5);
+// bài 7: Hàm tính điểm trung bình
