@@ -43,10 +43,10 @@ console.log("Student", student);
 console.log("Ten sinh vien:", student.name);
 console.log("Tuoi sinh vien:", student.age);
 console.log("Email sinh vien:", student.email);
-// Thay doi tuoi 
+
 student.age = 20;
+
 console.log("Tuoi sinh vien sau khi thay doi:", student.age);
-// them thuoc tinh
 student.phone ="02144261112";
 console.log("Student sau khi them phone:", student);
 // Bài 4 - Array Object
