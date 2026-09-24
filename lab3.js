@@ -26,3 +26,11 @@ const myName = `- Ten Toi la: ${name}
                         - Tuoi: ${student1.age}
                         - Nganh: ${student1.major}`;
         console.log(studentInfo1);
+//
+function add(a,b){
+    return a + b;
+}
+//
+const result = add(10,20); 
+const resultInfo = `Ket qua: ${result}`;
+console.log(resultInfo);
