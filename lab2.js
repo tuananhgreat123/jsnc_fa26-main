@@ -118,7 +118,7 @@ console.log(html);
     total = total + products[i].price;
     }
     console.log("Tong hop gia tri san pham:", total);
-    let procudtHTML = document.getElementById("products");
+    let productHTML = document.getElementById("products");
     let productContent = "";
     for (let i = 0; i < products.length; i++){
         productContent = productContent +
