@@ -65,4 +65,7 @@ const students = [
     { id: 2, name: "Tuan"},
     { id: 3, name: "PhAn"},
 ];
-
+const Info = students.map((students)=>{
+    return students.name
+});
+console.log(students);
