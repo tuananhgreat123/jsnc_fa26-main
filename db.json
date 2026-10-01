@@ -7,16 +7,10 @@
       "category": "Điện thoại"
     },
     {
-      "id": 2,
-      "name": "Samsung S25",
-      "price": 22000000,
-      "category": "Điện thoại"
-    },
-    {
-      "id": 3,
-      "name": "Xiaomi 15",
-      "price": 18000000,
-      "category": "Điện thoại"
+      "name": "tuan",
+      "price": "23333",
+      "category": "B",
+      "id": 2
     }
   ]
 }

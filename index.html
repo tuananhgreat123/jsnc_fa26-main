@@ -1,39 +1,49 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 4 - Product List</title>
+    <title>Javascript Nâng Cao - WEB2064</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gray-100 min-h-screen">
+  <body>
     <nav class="bg-blue-600 text-white shadow">
-      <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <strong class="text-xl">WEB2064 JSNC</strong>
+      <div
+        class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between"
+      >
+        <strong>WEB2064 JSNC</strong>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="hover:text-gray-200" aria-current="page">Danh sách sản phẩm</a>
+          <a href="add.html" class="hover:text-gray-200">Thêm mới</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-6"></div>
       </div>
     </nav>
-
-    <main class="max-w-6xl mx-auto mt-10 px-4">
-      <h1 class="text-3xl font-semibold mb-6 text-center">Danh sách sản phẩm</h1>
-
-      <div class="bg-white rounded-xl shadow overflow-hidden">
-        <table class="w-full border border-gray-300">
+    <div class="max-w-6xl mx-auto mt-10 px-4 text-center">
+      <h1 id="title" class="text-2xl font-semibold mb-6">Danh sách</h1>
+      <div id="app"></div>
+      <div class="overflow-x-auto">
+        <table class="w-full border border-gray-300 rounded-lg text-center">
           <thead class="bg-gray-100">
             <tr>
-              <th class="px-4 py-3 border border-gray-300">STT</th>
-              <th class="px-4 py-3 border border-gray-300">ID</th>
-              <th class="px-4 py-3 border border-gray-300">Tên sản phẩm</th>
-              <th class="px-4 py-3 border border-gray-300">Giá</th>
-              <th class="px-4 py-3 border border-gray-300">Danh mục</th>
-              <th class="px-4 py-3 border border-gray-300">Thao tác</th>
+              <th  class="px-4 py-2 border border-gray-300">STT</th>
+              <th  class="px-4 py-2 border border-gray-300">Mã sản phẩm</th>
+              <th  class="px-4 py-2 border border-gray-300">Tên sản phẩm</th>
+              <th  class="px-4 py-2 border border-gray-300">Giá</th>
+              <th  class="px-4 py-2 border border-gray-300">Danh mục</th>
+              <th  class="px-4 py-2 border border-gray-300">Thao tác</th>
             </tr>
           </thead>
+
           <tbody id="productsTableBody"></tbody>
         </table>
       </div>
-    </main>
-
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+    <!-- <script src="lab1.js"></script>
+    <script src="lab2.js"></script> -->
+    <!-- <script src="lab3.js"></script> -->
     <script src="lab4.js"></script>
   </body>
 </html>

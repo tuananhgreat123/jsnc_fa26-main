@@ -1,47 +1,43 @@
-const API_URL = "http://localhost:3000/products";
-const tableBody = document.getElementById("productsTableBody");
-
-function formatPrice(price) {
-  return new Intl.NumberFormat("vi-VN", {
-    style: "currency",
-    currency: "VND",
-  }).format(price);
-}
-
-function renderProducts(products) {
-  if (!tableBody) return;
-
-  tableBody.innerHTML = products
-    .map(
-      (product, index) => `
-        <tr class="hover:bg-gray-50">
-          <td class="px-4 py-2 border border-gray-300 text-center">${index + 1}</td>
-          <td class="px-4 py-2 border border-gray-300 text-center">${product.id}</td>
-          <td class="px-4 py-2 border border-gray-300">${product.name}</td>
-          <td class="px-4 py-2 border border-gray-300 text-right">${formatPrice(product.price)}</td>
-          <td class="px-4 py-2 border border-gray-300 text-center">${product.category}</td>
-          <td class="px-4 py-2 border border-gray-300">
-            <div class="flex items-center justify-center gap-2">
-              <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">Sửa</button>
-              <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">Xóa</button>
-            </div>
-          </td>
-        </tr>
-      `,
-    )
-    .join("");
-}
-
-function getProducts() {
+function loadProducts() {
   axios
-    .get(API_URL)
-    .then((res) => {
-      renderProducts(res.data);
-    })
-    .catch((err) => {
-      console.error("Lỗi khi gọi API products:", err);
-      alert("Không thể tải danh sách sản phẩm!");
-    });
+  .get("http://localhost:3000/products")
+  .then((response) => {
+    const products = response.data;
+      document.querySelector("tbody#productsTableBody").innerHTML = products
+      .map(
+        (product, index) => `
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-2 border border-gray-300">${index + 1}</td>
+            <td class="px-4 py-2 border border-gray-300">${product.id}</td>
+            <td class="px-4 py-2 border border-gray-300">${product.name}</td>
+            <td class="px-4 py-2 border border-gray-300">${product.price.toLocaleString("vi-VN")} đ</td>
+            <td class="px-4 py-2 border border-gray-300">${product.category}</td>
+            <td class="px-4 py-2 border border-gray-300">
+              <div class="flex items-center justify-center gap-2">
+                <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">Edit</a>
+                  <button type="button" onclick="deleteProduct(${product.id})" class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">Delete</button>
+              </div>
+            </td>
+          </tr>
+        `,
+        
+      )
+      .join("");
+  })
+  .catch((error) => {
+    console.error("Không tải được danh sách sản phẩm:", error);
+  });
 }
 
-getProducts();
+loadProducts();
+function deleteProduct(id) {
+  const result = confirm("Bạn có chắc chắn muốn xóa sản phẩm này không");
+  console.log(result);
+  if (result) {
+  axios.delete(`http://localhost:3000/products/${id}`).then(() => 
+  {alert("Xóa thành công");})
+  .catch(()=>{
+    alert("Xóa thất bại");
+  });
+}
+}
