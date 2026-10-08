@@ -11,6 +11,18 @@
       "price": "23333",
       "category": "B",
       "id": 2
+    },
+    {
+      "name": "tuan",
+      "price": "23334",
+      "category": "t",
+      "id": 3
+    },
+    {
+      "name": "tuanh",
+      "price": 12345,
+      "category": "C",
+      "id": 4
     }
   ]
 }

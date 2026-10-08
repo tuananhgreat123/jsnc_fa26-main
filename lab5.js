@@ -18,7 +18,8 @@ document.getElementById("form-add").addEventListener("submit", (event)=>{
     // age<0
     axios.post("http://localhost:3000/products", newproducts).then(()=>{
         alert("thêm thành công");
-    })
+        window.location.href = "index.html";
+        })
     .catch(()=>{
         alert("thêm thất bại");
     });
